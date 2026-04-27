@@ -618,28 +618,31 @@ export default function HomePage() {
 
 /* ── Product Card ── */
 function ProductCard({ product }: { product: (typeof featured)[0] }) {
+  const hasImage = "image" in product && product.image;
   return (
     <article className="group flex flex-col">
       {/* Visual area */}
-      <div className="relative bg-cream aspect-[3/4] flex items-center justify-center px-6 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            background: `radial-gradient(ellipse at 50% 60%, ${product.primary} 0%, transparent 70%)`,
-          }}
-        />
+      <div className={`relative aspect-[3/4] flex items-center justify-center overflow-hidden ${hasImage ? "bg-white" : "bg-cream px-6"}`}>
+        {!hasImage && (
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              background: `radial-gradient(ellipse at 50% 60%, ${product.primary} 0%, transparent 70%)`,
+            }}
+          />
+        )}
         {product.badge && (
           <div className="absolute top-5 left-5 bg-navy text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 z-10">
             {product.badge}
           </div>
         )}
         <div className="relative z-10 w-full h-full group-hover:-translate-y-1.5 transition-transform duration-500">
-          {"image" in product && product.image ? (
+          {hasImage ? (
             <Image
-              src={product.image}
+              src={product.image as string}
               alt={product.name}
               fill
-              className="object-contain p-4"
+              className="object-contain"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
           ) : (
