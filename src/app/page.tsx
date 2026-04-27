@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProductIllustration, { IllustrationType } from "@/components/ProductIllustration";
@@ -63,69 +64,77 @@ const featured = [
     id: 1,
     category: "Oleoteca",
     categorySlug: "oleoteca",
-    name: "Nocellara del Belice",
-    region: "Sicilia, Italia",
-    subtitle: "Intensitate medie",
-    notes: ["Fructat verde", "Artișoc", "Mentă"],
+    name: "Quattrociocchi Il Classico",
+    region: "Lazio, Italia",
+    subtitle: "Intensitate medie, presat la rece",
+    notes: ["Fructat copt", "Floral", "Fin picant"],
     harvest: "Oct 2024",
-    price: "85 lei",
+    price: "89 RON",
     volume: "500 ml",
-    slug: "nocellara-del-belice",
+    slug: "quattrociocchi-classico-500ml",
+    image: "/products/9331-quattrociocchi-classico-500ml.jpg",
+    sku: "9331",
     illustration: "oil" as IllustrationType,
     primary: "#3d5c35",
     accent: "#b8962e",
-    badge: "Nou",
+    badge: null,
   },
   {
     id: 2,
-    category: "Măsline de soi",
-    categorySlug: "masline",
-    name: "Kalamata Amphissa Reserve",
-    region: "Grecia centrală",
-    subtitle: "Marinate în ulei și ierburi",
-    notes: ["Fructat intens", "Note lemnoase", "Puțin iuți"],
+    category: "Oleoteca",
+    categorySlug: "oleoteca",
+    name: "Taggiasca Nefiltrat Ghiglione",
+    region: "Liguria, Italia",
+    subtitle: "Nefiltrat — turbiditate naturală",
+    notes: ["Dulceag", "Migdale", "Fructe galbene"],
     harvest: "Nov 2024",
-    price: "54 RON",
-    volume: "280 g",
-    slug: "kalamata-amphissa-reserve",
-    illustration: "olives" as IllustrationType,
+    price: "94 RON",
+    volume: "1 L",
+    slug: "taggiasca-nefiltrat-1l-ghiglione",
+    image: "/products/9356-taggiasca-nefiltrat-1l-ghiglione.jpg",
+    sku: "9356",
+    illustration: "oil" as IllustrationType,
     primary: "#4a6741",
     accent: "#b8962e",
     badge: "Bestseller",
   },
   {
     id: 3,
-    category: "Creme & Paste",
-    categorySlug: "creme-paste",
-    name: "Tapenade Negre cu Trufe",
-    region: "Provence, Franța",
-    subtitle: "Pastă artizanală",
-    notes: ["Umami", "Trufe negre", "Capere"],
-    harvest: "2024",
-    price: "68 RON",
-    volume: "180 g",
-    slug: "tapenade-negre-trufe",
-    illustration: "cream" as IllustrationType,
+    category: "Oleoteca",
+    categorySlug: "oleoteca",
+    name: "Olivastro Quattrociocchi",
+    region: "Lazio, Italia",
+    subtitle: "Premiat · Intensitate ridicată",
+    notes: ["Ierbos", "Roșii verzi", "Piper"],
+    harvest: "Sep 2024",
+    price: "72 RON",
+    volume: "250 ml",
+    slug: "olivastro-quattrociocchi-250ml",
+    image: "/products/9343-olivastro-quattrociocchi-250ml.jpg",
+    sku: "9343",
+    illustration: "oil" as IllustrationType,
     primary: "#2e4228",
     accent: "#b8962e",
-    badge: null,
+    badge: "Premiat",
   },
   {
     id: 4,
-    category: "Conserve fine",
-    categorySlug: "conserve",
-    name: "Antipasto della Nonna",
+    category: "Oleoteca",
+    categorySlug: "oleoteca",
+    name: "De Carlo Torre di Mossa DOP",
     region: "Puglia, Italia",
-    subtitle: "Legume în ulei extravirgin",
-    notes: ["Ardei copți", "Anghinare", "Usturoi"],
-    harvest: "2024",
-    price: "72 RON",
-    volume: "290 g",
-    slug: "antipasto-della-nonna",
-    illustration: "preserve" as IllustrationType,
+    subtitle: "DOP Bitonto · Coratina",
+    notes: ["Intens", "Artișoc", "Amăruie elegantă"],
+    harvest: "Oct 2024",
+    price: "118 RON",
+    volume: "500 ml",
+    slug: "de-carlo-torre-di-mossa-dop-500ml",
+    image: "/products/9378-de-carlo-torre-di-mossa-dop-500ml.jpg",
+    sku: "9378",
+    illustration: "oil" as IllustrationType,
     primary: "#4a5e22",
     accent: "#a07c28",
-    badge: null,
+    badge: "DOP",
   },
 ];
 
@@ -210,66 +219,72 @@ const promos: PromoSectionProps[] = [
     ],
   },
   {
-    label: "Recoltă nouă",
-    title: "Koroneiki\n2024",
+    label: "Colecție Ghiglione · Liguria",
+    title: "Taggiasca\nGhiglione",
     description:
-      "Prima presare a recoltei Koroneiki din Creta — intensitate ridicată, ierbos proaspăt, cu o amărăciune elegantă care definește uleiul grecesc de excepție.",
+      "Soiul Taggiasca din Liguria — dulceag, cu note de migdale și fructe galbene. Disponibil nefiltrat, bio și în format 3L pentru amatorii serioși.",
     bg: "#faf8f3",
     textLight: false,
     accentColor: "#b8962e",
-    linkHref: "/colectie/uleiuri/koroneiki",
-    linkLabel: "Toate loturile Koroneiki",
+    linkHref: "/colectie/oleoteca/taggiasca",
+    linkLabel: "Toată colecția Taggiasca",
     decorativeType: "oil",
     decorativeColor: "#2e4a28",
     products: [
       {
         id: 201,
-        category: "Ulei extravirgin",
-        categorySlug: "uleiuri",
-        name: "Koroneiki Reserve",
-        region: "Creta, Grecia",
-        subtitle: "Intensitate ridicată",
-        notes: ["Ierbos", "Piper verde", "Citrice"],
-        harvest: "Sep 2024",
-        price: "92 lei",
+        category: "Oleoteca",
+        categorySlug: "oleoteca",
+        name: "Taggiasca Bio Organic",
+        region: "Liguria, Italia",
+        subtitle: "Certificat ecologic · 500 ml",
+        notes: ["Dulceag", "Floral", "Migdale"],
+        harvest: "Nov 2024",
+        price: "87 RON",
         volume: "500 ml",
-        slug: "koroneiki-reserve",
+        slug: "taggiasca-bio-organic-500ml-ghiglione",
+        image: "/products/9355-taggiasca-bio-organic-500ml-ghiglione.jpg",
+        sku: "9355",
         illustration: "oil",
-        primary: "#2e4a28",
+        primary: "#3d5c35",
         accent: "#c9a84c",
-        badge: "Bestseller",
+        badge: "Bio",
       },
       {
         id: 202,
-        category: "Ulei extravirgin",
-        categorySlug: "uleiuri",
-        name: "Koroneiki Early Harvest",
-        region: "Messenia, Grecia",
-        subtitle: "Cules în verde — intensitate maximă",
-        notes: ["Fructat verde", "Roșii verzi", "Rucola"],
-        harvest: "Aug 2024",
-        price: "108 lei",
-        volume: "500 ml",
-        slug: "koroneiki-early-harvest",
+        category: "Oleoteca",
+        categorySlug: "oleoteca",
+        name: "Taggiasca Nefiltrat 3L",
+        region: "Liguria, Italia",
+        subtitle: "Format family · Nefiltrat",
+        notes: ["Fructat", "Migdale", "Rotund"],
+        harvest: "Nov 2024",
+        price: "249 RON",
+        volume: "3 L",
+        slug: "taggiasca-nefiltrat-3l-ghiglione",
+        image: "/products/9357-taggiasca-nefiltrat-3l-ghiglione.jpg",
+        sku: "9357",
         illustration: "oil",
-        primary: "#3d5c35",
+        primary: "#4a6741",
         accent: "#b8962e",
-        badge: "Ediție limitată",
+        badge: null,
       },
       {
         id: 203,
-        category: "Ulei extravirgin",
-        categorySlug: "uleiuri",
-        name: "Koroneiki BIO",
-        region: "Laconia, Grecia",
-        subtitle: "Certificat ecologic",
-        notes: ["Floral", "Migdale verzi", "Fin picant"],
+        category: "Oleoteca",
+        categorySlug: "oleoteca",
+        name: "Moresca Galioto",
+        region: "Sicilia, Italia",
+        subtitle: "Monocultivar · Intensitate medie",
+        notes: ["Fructat verde", "Mentă", "Ierbos fin"],
         harvest: "Oct 2024",
-        price: "96 lei",
+        price: "76 RON",
         volume: "500 ml",
-        slug: "koroneiki-bio",
+        slug: "moresca-galioto-500ml",
+        image: "/products/9351-moresca-galioto-500ml.jpg",
+        sku: "9351",
         illustration: "oil",
-        primary: "#4a6741",
+        primary: "#2e4228",
         accent: "#c9a84c",
         badge: null,
       },
@@ -618,13 +633,27 @@ function ProductCard({ product }: { product: (typeof featured)[0] }) {
             {product.badge}
           </div>
         )}
-        <div className="relative z-10 h-40 w-auto group-hover:-translate-y-1.5 transition-transform duration-500">
-          <ProductIllustration
-            type={product.illustration}
-            primaryColor={product.primary}
-            accentColor={product.accent}
-            className="h-full w-auto"
-          />
+        <div className="relative z-10 w-full h-full group-hover:-translate-y-1.5 transition-transform duration-500">
+          {"image" in product && product.image ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-contain p-4"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+          ) : (
+            <div className="flex items-center justify-center h-full">
+              <div className="h-40 w-auto">
+                <ProductIllustration
+                  type={product.illustration}
+                  primaryColor={product.primary}
+                  accentColor={product.accent}
+                  className="h-full w-auto"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

@@ -16,6 +16,8 @@ export interface PromoProduct {
   price: string;
   volume: string;
   slug: string;
+  image?: string;
+  sku?: string;
   illustration: IllustrationType;
   primary: string;
   accent: string;
@@ -190,13 +192,27 @@ function PromoProductCard({ product }: { product: PromoProduct }) {
             {product.badge}
           </div>
         )}
-        <div className="relative z-10 h-40 w-auto group-hover:-translate-y-1.5 transition-transform duration-500">
-          <ProductIllustration
-            type={product.illustration}
-            primaryColor={product.primary}
-            accentColor={product.accent}
-            className="h-full w-auto"
-          />
+        <div className="relative z-10 w-full h-full group-hover:-translate-y-1.5 transition-transform duration-500">
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-contain p-4"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="flex items-center justify-center h-full">
+              <div className="h-40 w-auto">
+                <ProductIllustration
+                  type={product.illustration}
+                  primaryColor={product.primary}
+                  accentColor={product.accent}
+                  className="h-full w-auto"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

@@ -1,0 +1,167 @@
+================================================================================
+AUDIT GOURMETTERIA — RAPORT COMPLET
+Design · Texte · UX · Mobile · SEO · Performanță
+27 Aprilie 2026
+================================================================================
+
+
+════════════════════════════════════════════════════════════════════════════════
+CE E BINE
+════════════════════════════════════════════════════════════════════════════════
+
+DESIGN
+------
+▸ Paleta navy + gold + cream + olive este coerenta de la un capat la altul —
+  fara culori inconsistente sau scapari de brand.
+▸ Cormorant Garamond + Jost este o combinatie tipografica solida si potrivita
+  pentru segmentul premium gourmet.
+▸ Tranzitiile si hover effects sunt uniforme peste tot (duration-300/500).
+▸ Gold dividerele subtile (h-px bg-gold/40) dau eleganta fara sa supraIncarce.
+▸ Sistemul de grid si spatiere (max-w-screen-xl, px-8) sunt consistente
+  in toate sectiunile paginii.
+
+TEXTE
+-----
+▸ "Vinoteca uleiului de masline" — cel mai bun text din site, concept original
+  si memorabil, analogia cu vinoteca functioneaza perfect.
+▸ "Artizanat mediteranean, ales cu grija" — tagline funcTional si clar.
+▸ Copy-ul de produs (note de degustare, regiune, recolta, volum) este
+  specific si profesional.
+▸ Structura heroului (label → H1 → linie gold → paragraf → CTA) respecta
+  o ierarhie vizuala clara.
+
+PERFORMANTA
+-----------
+▸ Build static cu Turbopack — prima Incarcare este foarte rapida.
+▸ Fonturile prin next/font elimina FOUT (flash of unstyled text).
+▸ SVG-urile inline nu genereaza request-uri HTTP suplimentare.
+▸ Build time: ~12s cu cache restaurat, compilare reusita 100%.
+
+
+════════════════════════════════════════════════════════════════════════════════
+CE TREBUIE SCHIMBAT
+════════════════════════════════════════════════════════════════════════════════
+
+── P0 — Inainte de orice altceva ──────────────────────────────────────────────
+
+1. Citatul lui Ottolenghi este inventat
+   "Gastronomia mediteraneana nu e o bucatarie — e o civilizatie..." nu este
+   o citare verificabila. Un client care cauta sursa nu o va gasi.
+   FIX: citare reala verificabila, atribuire generica ("— traditie
+   mediteraneana"), sau eliminare completa.
+
+2. Preturile au notatii mixate
+   "85 lei" vs "54 RON" vs "68 RON" — inconsistenta de baza.
+   FIX: standardizeaza la "RON" sau "lei" in toate fisierele de date.
+
+3. Logo-ul "GOURMETTERIA" poate deborda pe mobile
+   11 litere cu tracking-[0.3em] uppercase estimeaza ~370px latime la
+   viewport 375px (iPhone SE).
+   FIX: tracking-[0.15em] lg:tracking-[0.3em] — reduce spacing-ul pe mobile.
+
+4. Favicon si OG image lipsesc complet
+   /public contine doar SVG-urile default Next.js. Fara favicon, tab-ul
+   browserului afiseaza iconita generica. Fara og:image, share-ul pe social
+   media arata un dreptunghi gol.
+
+5. Lipsesc meta tags Open Graph
+   Necesare pentru Facebook, WhatsApp, LinkedIn. De adaugat in layout.tsx:
+
+   openGraph: {
+     title: "Gourmetteria — Artizanat mediteranean, ales cu grija",
+     description: "...",
+     url: "https://gourmetteria.ro",
+     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+     locale: "ro_RO",
+     type: "website",
+   }
+
+6. Cookie consent lipseste complet
+   GDPR obliga la banner inainte de orice tracking. Lipsa bannerului = amenda
+   potentiala la prima sesizare.
+
+── P1 — UX si functionalitate ─────────────────────────────────────────────────
+
+7. Toate linkurile sunt moarte
+   Nicio pagina in afara de homepage nu exista. /colectie/oleoteca, /ghid,
+   /despre, /contact — toate returneaza 404.
+   FIX: cel putin o pagina placeholder pentru fiecare ruta principala.
+
+8. Butonul "Adauga" nu face nimic
+   Product card-urile au un buton "Adauga" care nu adauga nimic nicaieri.
+   E mai bine ascuns decat sa dea falsa impresie de functionalitate.
+
+9. Newsletter form nu trimite nicaieri
+   onSubmit={(e) => e.preventDefault()} — formularul colecteaza emailuri
+   in neant.
+   FIX: integreaza un provider (Mailchimp, Klaviyo, Brevo) sau pune un
+   mesaj "in curand".
+
+── P2 — Copy si ton ───────────────────────────────────────────────────────────
+
+10. "Alese cu grija pentru tine" este prea banal
+    Sectiunea Selectia lunii merita un headline mai specific:
+    "Selectia lunii — Aprilie 2025" sau "Ce degustam acum".
+
+11. "Inima Mediteranei" este un cliseu
+    Apare in hero. Versiuni mai specifice: "de la producatori cu sub
+    5 hectare", "de la fermieri pe care ii cunoastem pe nume".
+
+12. Numerele de produse sunt hardcodate si inventate
+    "58 produse", "44 produse" in sectiunea Regiuni creeaza asteptari false
+    daca nu exista un catalog real.
+    FIX: elimina sau inlocuieste cu "Exploreaza →".
+
+
+════════════════════════════════════════════════════════════════════════════════
+CE LIPSESTE — IN ORDINEA PRIORITATII
+════════════════════════════════════════════════════════════════════════════════
+
+  PRIORITATE  CE                                DE CE CONTEAZA
+  ----------  --------------------------------  --------------------------------
+  P0          Favicon + OG image                Tab browser, share social
+  P0          Open Graph / Twitter Card tags    Facebook, WhatsApp, LinkedIn
+  P0          Fix citatul Ottolenghi            Credibilitate — nu e verificabil
+  P0          Fix preturi consistente           Profesionalism de baza
+  ----------  --------------------------------  --------------------------------
+  P1          Pagini colectii (placeholder)     Linkurile sa nu fie 404
+  P1          Pagina "Despre noi"               Esentiala pentru brand premium
+  P1          Cookie consent GDPR               Obligatoriu legal
+  P1          Pagini legale (politica, termeni) Linkuri exista, paginile nu
+  ----------  --------------------------------  --------------------------------
+  P2          Cos functional + checkout         E-commerce de baza
+  P2          Pagini de produs individuale      Fara ele nu poti vinde
+  P2          Integrare plati (Stripe / PayU)   Revenue — obiectivul final
+  ----------  --------------------------------  --------------------------------
+  P3          Fotografii reale de produs        SVG-urile sunt ok pt MVP,
+                                                nu pentru vanzari reale
+  P3          Schema.org structured data        Rich snippets in Google
+  P3          sitemap.xml + robots.txt          Indexare SEO completa
+  P3          Newsletter integrat real          Klaviyo / Mailchimp
+  P3          Pagina 404 custom                 UX dupa linkuri gresite
+  P3          Recenzii produse                  Social proof, conversii
+
+
+════════════════════════════════════════════════════════════════════════════════
+CONCLUZIE SI ROADMAP
+════════════════════════════════════════════════════════════════════════════════
+
+Site-ul arata bine vizual si are o baza solida de design si cod. Problemele
+critice sunt in continut si functionalitate, nu in design. Fix-urile P0 se
+pot face in cateva ore.
+
+  Saptamana 1  Fix P0 (favicon, OG, citat, preturi) + cookie consent
+               + pagini placeholder pentru rutele principale
+
+  Saptamana 2  Pagina Despre noi + pagini legale + newsletter integrat real
+
+  Luna 1       Pagini de colectie cu produse reale + pagini de produs
+
+  Luna 2       Cos + checkout + integrare plati
+
+  Luna 3       Fotografii reale + SEO avansat (Schema.org, sitemap)
+               + recenzii produse
+
+================================================================================
+Raport generat automat · Gourmetteria Audit · 27 Aprilie 2026
+================================================================================
