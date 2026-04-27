@@ -4,7 +4,7 @@ const columns = [
   {
     title: "Categorii",
     links: [
-      { label: "Uleiuri extravirgine", href: "/colectie/uleiuri" },
+      { label: "Oleoteca", href: "/colectie/oleoteca" },
       { label: "Măsline de soi", href: "/colectie/masline" },
       { label: "Creme & Paste", href: "/colectie/creme-paste" },
       { label: "Conserve fine", href: "/colectie/conserve" },
@@ -22,7 +22,7 @@ const columns = [
     ],
   },
   {
-    title: "Oleoteca",
+    title: "Gourmetteria",
     links: [
       { label: "Despre noi", href: "/despre" },
       { label: "Ghid de degustare", href: "/ghid" },
@@ -45,15 +45,15 @@ export default function Footer() {
               href="/"
               className="font-display text-2xl tracking-[0.3em] uppercase text-white block mb-6"
             >
-              Oleoteca
+              Gourmetteria
             </Link>
             <p className="text-sm leading-relaxed text-white/50 max-w-xs">
-              Selecție premium de uleiuri de măsline extravirgine din cele mai
-              renumite oleoteci ale lumii.
+              Boutique gourmet mediteranean — produse artizanale premium,
+              selecționate cu grijă de la producători mici.
             </p>
             <div className="mt-8 flex items-center gap-1">
               <span className="text-xs tracking-widest uppercase text-gold">
-                oleoteca.ro
+                gourmetteria.ro
               </span>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="max-w-screen-xl mx-auto px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs text-white/30 tracking-wide">
-          © 2024 Oleoteca. Toate drepturile rezervate.
+          © 2025 Gourmetteria. Toate drepturile rezervate.
         </p>
         <div className="flex items-center gap-8">
           <Link

@@ -16,10 +16,10 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Oleoteca — Selecție Premium de Ulei Extravirgin",
+  title: "Gourmetteria — Artizanat mediteranean, ales cu grijă",
   description:
-    "Descoperă cele mai fine uleiuri de măsline extravirgine, măsline de soi, creme și conserve mediteraneene fine.",
-  keywords: "ulei masline extravirgin, masline de soi, conserve mediteraneene, oleoteca, premium",
+    "Boutique gourmet mediteranean — produse artizanale premium selecționate cu grijă de la producători mici: uleiuri Oleoteca, măsline de soi, creme, paste și conserve fine.",
+  keywords: "produse gourmet mediteraneene, gourmetteria, oleoteca, ulei masline extravirgin, artizanal premium",
 };
 
 export default function RootLayout({

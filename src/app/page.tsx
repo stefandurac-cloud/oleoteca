@@ -9,13 +9,13 @@ import PromoSection, { PromoSectionProps } from "@/components/PromoSection";
 
 const categories = [
   {
-    id: "uleiuri",
-    label: "Uleiuri extravirgine",
-    slug: "/colectie/uleiuri",
+    id: "oleoteca",
+    label: "Oleoteca",
+    slug: "/colectie/oleoteca",
     count: 48,
-    tagline: "Aurul lichid al Mediteranei",
+    tagline: "Vinoteca uleiului de măsline",
     description:
-      "Selecție premium de uleiuri monovarietale și cupaje din recoltele cele mai recente. Certificăm aciditatea și profilul senzorial al fiecărui lot.",
+      "Secțiunea noastră premium dedicată exclusiv uleiurilor extravirgine de excepție — monovarietale și cupaje selecționate lot cu lot, certificate senzorial.",
     illustration: "oil" as IllustrationType,
     illustrationPrimary: "#3d5c35",
     illustrationAccent: "#c9a84c",
@@ -61,8 +61,8 @@ const categories = [
 const featured = [
   {
     id: 1,
-    category: "Ulei extravirgin",
-    categorySlug: "uleiuri",
+    category: "Oleoteca",
+    categorySlug: "oleoteca",
     name: "Nocellara del Belice",
     region: "Sicilia, Italia",
     subtitle: "Intensitate medie",
@@ -305,10 +305,12 @@ export default function HomePage() {
 
                 <div className="w-16 h-px bg-gold mb-8" />
 
-                <p className="text-lg font-light text-navy/60 leading-relaxed max-w-md mb-12">
-                  Uleiuri extravirgine, măsline de soi, creme și conserve
-                  fine — selecție de excepție de la producători mici din
-                  inima Mediteranei.
+                <p className="text-lg font-light text-navy/60 leading-relaxed max-w-md mb-2">
+                  Artizanat mediteranean, ales cu grijă.
+                </p>
+                <p className="text-base font-light text-navy/40 leading-relaxed max-w-md mb-12">
+                  Uleiuri Oleoteca, măsline de soi, creme și conserve fine —
+                  de la producători mici din inima Mediteranei.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -360,7 +362,7 @@ export default function HomePage() {
           {/* Section header */}
           <div className="max-w-screen-xl mx-auto px-8 pt-24 pb-16 text-center">
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">
-              Universul Oleoteca
+              Universul Gourmetteria
             </p>
             <h2 className="font-display text-5xl md:text-6xl font-light text-navy">
               Patru categorii, o singură{" "}
@@ -505,11 +507,11 @@ export default function HomePage() {
                 </h2>
                 <div className="w-12 h-px bg-gold mb-8" />
                 <p className="text-base leading-loose text-navy/60 mb-6">
-                  Oleoteca s-a născut din convingerea că produsele
+                  Gourmetteria s-a născut din convingerea că produsele
                   mediteraneene de calitate merită același respect cu care
-                  tratăm marile vinuri. Uleiuri, măsline, creme, conserve —
-                  fiecare selecție pornește de la cunoașterea directă a
-                  producătorului.
+                  tratăm marile vinuri. Uleiuri Oleoteca, măsline, creme,
+                  conserve — fiecare selecție pornește de la cunoașterea
+                  directă a producătorului.
                 </p>
                 <p className="text-base leading-loose text-navy/60 mb-12">
                   Lucrăm exclusiv cu producători mici, dedicați calității și
@@ -576,7 +578,7 @@ export default function HomePage() {
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-2xl mx-auto text-center">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">
-                Comunitatea Oleoteca
+                Comunitatea Gourmetteria
               </p>
               <h2 className="font-display text-5xl font-light text-navy mb-4">
                 Fii primul care știe

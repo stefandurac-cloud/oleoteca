@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
-        has: [{ type: "host", value: "www.oleoteca.ro" }],
-        destination: "https://oleoteca.ro/:path*",
+        has: [{ type: "host", value: "www.gourmetteria.ro" }],
+        destination: "https://gourmetteria.ro/:path*",
         permanent: true,
       },
     ];

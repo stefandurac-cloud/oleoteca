@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const categories = [
-  { label: "Uleiuri", href: "/colectie/uleiuri" },
+  { label: "Oleoteca", href: "/colectie/oleoteca" },
   { label: "Măsline", href: "/colectie/masline" },
   { label: "Creme & Paste", href: "/colectie/creme-paste" },
   { label: "Conserve", href: "/colectie/conserve" },
@@ -53,7 +53,7 @@ export default function Navigation() {
           href="/"
           className="absolute left-1/2 -translate-x-1/2 font-display text-2xl tracking-[0.3em] uppercase text-navy hover:text-gold transition-colors duration-300 whitespace-nowrap"
         >
-          Oleoteca
+          Gourmetteria
         </Link>
 
         {/* Utility links — right */}
